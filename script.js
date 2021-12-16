@@ -17,20 +17,33 @@ let app = new Vue({
       contatore: 0,
     },
     methods: {
-      next: function () {
+      // Funzione per mandare avanti lo slide
+      next: function() {
         this.contatore += 1;
         if (this.contatore > this.images.length - 1)
           {
           this.contatore = 0;
-          };
+          }
       },
-      prev: function () {
+      // Funzione per mandare indietro lo slide
+      prev: function() {
         this.contatore -= 1;
         if (this.contatore != 0)
           {
             this.contatore > this.images.length - 1;
           };
       },
+      // Funzione per l'autoplay
+      timer: function(){
+        this.time = setInterval(this.next, 2000);
+      },
+      // Funzione per bloccare l'autoplay
+      stop: function () {
+        clearInterval(this.time);
+      }
+    },
+    created(){
+      this.timer();
     }
   })
 

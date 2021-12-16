@@ -12,11 +12,11 @@
 <body>
     <div id="app" class="container">
       <div class="slider-wrapper">
-        <div @click="prev"class="prev">
+        <div @click="prev" class="prev">
           <i class="fas fa-angle-left"></i>
         </div>
         <div class="images">
-          <img :src="`img/${images[contatore]}`" alt="">
+          <img @mouseover="stop" @mouseleave="timer" :src="`img/${images[contatore]}`" alt="">
         </div>
         <div @click="next" class="next">
           <i class="fas fa-angle-right"></i>

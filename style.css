@@ -75,3 +75,6 @@
   .nav>i.active {
     color: aqua;
   }
+  .fas:hover{
+    cursor: pointer;
+  }
